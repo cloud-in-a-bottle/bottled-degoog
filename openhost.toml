@@ -1,0 +1,19 @@
+[app]
+name = "degoog"
+version = "0.1.0"
+description = "Self-hosted meta-search aggregator. Queries multiple search engines and shows unified results. Supports custom engines, plugins, themes, and transports."
+
+[runtime.container]
+image = "Dockerfile"
+port = 8080
+
+[routing]
+health_check = "/readyz"
+public_paths = ["/readyz"]
+
+[resources]
+memory_mb = 512
+cpu_millicores = 500
+
+[data]
+app_data = true
